@@ -23,6 +23,7 @@ let totalEmpHours = 0
 let totalWorkingDays = 0
 let empDailyWageArray = new Array()
 let empDailyHrsMap = new Map()
+let empDailyHrsAndWageArr = new Array()
 
 while ( totalEmpHours < MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS) {
     totalWorkingDays++
@@ -31,7 +32,19 @@ while ( totalEmpHours < MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DA
     totalEmpHours += empHours
     empDailyHrsMap.set(totalWorkingDays,empHours)
     empDailyWageArray.push(calculateWage(empHours))
+    empDailyHrsAndWageArr.push(
+        {
+            dayNum:totalWorkingDays,
+            dayHours:empHours,
+            dailyWage:calculateWage(empHours),
+            toString(){
+                return `Day ${this.dayNum} => Working Hours is ${this.dayHours} And Wage Earned = ${this.dailyWage}`
+            },
+        }
+    )
 }
+// printing daily wage using object
+console.log("Showing daily worked hours and daily earned= \n"+empDailyHrsAndWageArr);
 
 // total wage using arrow function
 let totalEmpWage = 0
