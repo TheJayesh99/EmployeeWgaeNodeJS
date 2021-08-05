@@ -80,3 +80,12 @@ function isAnypartTime(dailyWage) {
     return dailyWage.includes("80")
 }
 console.log("Check any part time wage: "+mapWithDailyWage.some(isAnypartTime));
+
+//g - Find number of days employee work
+function totalDaysWorked(numberOfDays,dailyWage) {
+    if (dailyWage>0) {
+        return numberOfDays+1
+    }
+    return numberOfDays
+}
+console.log("Number of days employee worked: " +empDailyWageArray.reduce(totalDaysWorked,0));
