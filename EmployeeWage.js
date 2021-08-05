@@ -62,7 +62,8 @@ console.log(fullDayWageArr)
 function findFullTimeWage(dailyWage) {
     return dailyWage == 160
 }
-console.log("The first time employee worked full time: "+parseInt(Array.from(empDailyWageMap.values()).findIndex(findFullTimeWage)))
+let firstDay = Array.from(empDailyWageMap.values()).findIndex(findFullTimeWage) +1
+console.log("The first time employee worked full time: "+firstDay)
 
 //e - check every full time wage holding full time wage
 function isAllFullTimeWage(dailyWage) {
