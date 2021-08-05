@@ -73,4 +73,10 @@ console.log("The first time employee worked full time: "+mapWithDailyWage.find(f
 function isAllFullTimeWage(dailyWage) {
     return dailyWage.includes("160")
 }
-console.log("Check all elementhave full time wage : " + fullDayWageArr.every(isAllFullTimeWage));
+console.log("Check all element have full time wage : " + fullDayWageArr.every(isAllFullTimeWage));
+
+//f - check if thereis any part time
+function isAnypartTime(dailyWage) {
+    return dailyWage.includes("80")
+}
+console.log("Check any part time wage: "+mapWithDailyWage.some(isAnypartTime));
