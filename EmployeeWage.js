@@ -34,7 +34,7 @@ let totalempWage = 0
 function sum(dailyWage) {
     totalempWage += dailyWage
 }
-let empWage =calculateWage(totalEmpHours)
+
 //a - using foreach 
 empDailyWageArray.forEach(sum);
 console.log("Total days " +totalWorkingDays+ " Total hours "+totalEmpHours+" Employee Wage "+totalempWage)
@@ -44,3 +44,13 @@ function totalWage(totalWage,dailyWage) {
     return totalWage += dailyWage
 }
 console.log("Total days " +totalWorkingDays+ " Total hours "+totalEmpHours+" Employee Wage "+empDailyWageArray.reduce(totalWage,0))
+
+//b-show day along daily wage
+let dailyCntr = 0
+function mapWithDay(dailyWage) {
+    dailyCntr++
+    return dailyCntr+" = "+dailyWage
+}
+let mapWithDailyWage = empDailyWageArray.map(mapWithDay)
+console.log("Daily Wage Map")
+console.log(mapWithDailyWage);
